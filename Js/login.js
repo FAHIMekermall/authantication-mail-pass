@@ -43,8 +43,8 @@ const fotgotPass = ()=>{
 	const emailData = value("email")
 	const passData = value("pass")
 
-    const name = prompt('typer your Name')
-    if(name.toLowerCase === nameData.toLowerCase){
+    const name = prompt('type your Name')
+    if(name.toLowerCase() === nameData.toLowerCase()){
         swal(
             `
             your email is: ${emailData}
