@@ -30,7 +30,7 @@ const authantication = () => {
 	console.log(mail)
 	console.log(emailData)
 
-	if (mail === emailData && pass === passData) {
+	if (mail.toLowerCase === emailData.toLowerCase && pass === passData) {
 		swal(`you are succesfully login Mr:${nameData}`)
 	}
     else{
@@ -38,6 +38,29 @@ const authantication = () => {
     }
 }
 
+const fotgotPass = ()=>{
+    const nameData = value("name")
+	const emailData = value("email")
+	const passData = value("pass")
+
+    const name = prompt('typer your Name')
+    if(name.toLowerCase === nameData.toLowerCase){
+        swal(
+            `
+            your email is: ${emailData}
+            your pass is: ${passData}
+            `
+        )
+    }
+    else{
+        swal('you must enter your name')
+    }
+}
+
 getEleById("loginButton").addEventListener("click", function () {
     authantication()
+})
+
+getEleById('forgot').addEventListener('click',function(){
+    fotgotPass()
 })
